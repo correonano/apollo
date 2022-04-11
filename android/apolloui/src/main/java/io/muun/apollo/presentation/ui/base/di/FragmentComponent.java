@@ -1,5 +1,6 @@
 package io.muun.apollo.presentation.ui.base.di;
 
+import io.muun.apollo.presentation.ui.fragments.analytics.AnalyticsSettingsFragment;
 import io.muun.apollo.presentation.ui.fragments.create_email_help.CreateEmailHelpFragment;
 import io.muun.apollo.presentation.ui.fragments.create_password.CreatePasswordFragment;
 import io.muun.apollo.presentation.ui.fragments.ek_intro.EmergencyKitIntroFragment;
@@ -171,4 +172,6 @@ public interface FragmentComponent {
     void inject(BitcoinSettingsFragment bitcoinSettingsFragment);
 
     void inject(TaprootIntroFragment taprootIntroFragment);
+
+    void inject(AnalyticsSettingsFragment analyticsSettingsFragment);
 }

@@ -52,6 +52,7 @@ open class UserPreferencesRepository @Inject constructor(
         var seenNewHome: Boolean = false
         var seenLnurlFirstTime: Boolean = false
         var defaultAddressType: String = "segwit"
+        var analyticsEnable: Boolean = true
 
         // JSON constructor
         constructor()
@@ -61,6 +62,7 @@ open class UserPreferencesRepository @Inject constructor(
             seenNewHome = prefs.seenNewHome
             seenLnurlFirstTime = prefs.seenLnurlFirstTime
             defaultAddressType = prefs.defaultAddressType
+            analyticsEnable = prefs.analyticsEnable
         }
 
         fun toModel(): UserPreferences {
@@ -68,7 +70,8 @@ open class UserPreferencesRepository @Inject constructor(
                     strictMode,
                     seenNewHome,
                     seenLnurlFirstTime,
-                    defaultAddressType
+                    defaultAddressType,
+                    analyticsEnable
             )
         }
     }

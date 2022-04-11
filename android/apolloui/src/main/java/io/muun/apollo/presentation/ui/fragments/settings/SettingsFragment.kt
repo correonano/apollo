@@ -90,6 +90,12 @@ open class SettingsFragment: SingleFragment<SettingsPresenter>(), SettingsView {
     @BindView(R.id.settings_version_code)
     lateinit var versionCode: TextView
 
+    @BindView(R.id.analytics_settings)
+    lateinit var analyticsSettingsItem: MuunSettingItem
+
+    @BindView(R.id.analytics_settings_vm)
+    lateinit var analyticsSettingsVMItem: MuunSettingItem
+
     override fun inject() {
         component.inject(this)
     }
@@ -117,6 +123,8 @@ open class SettingsFragment: SingleFragment<SettingsPresenter>(), SettingsView {
         logoutItem.setOnClickListener { goToLogout() }
         bitcoinSettingsItem.setOnClickListener { goToBitcoinSettings() }
         lightningSettingsItem.setOnClickListener { goToLightningSettings() }
+        analyticsSettingsItem.setOnClickListener { goToAnalyticsSettings() }
+        analyticsSettingsVMItem.setOnClickListener { goToAnalyticsSettingsVM() }
 
         // TEMP: code for Taproot QA:
 //        versionCode.setOnClickListener { rotateDebugTaprootStatusForQa() }
@@ -289,6 +297,13 @@ open class SettingsFragment: SingleFragment<SettingsPresenter>(), SettingsView {
 
     private fun goToLightningSettings() {
         presenter.navigateToLightningSettings()
+    }
+
+    private fun goToAnalyticsSettings() {
+        presenter.navigateToAnalyticsSettings()
+    }
+    private fun goToAnalyticsSettingsVM() {
+        presenter.navigateToAnalyticsSettingsVM()
     }
 
     private fun showBitcoinSettings(state: SettingsState): Boolean =

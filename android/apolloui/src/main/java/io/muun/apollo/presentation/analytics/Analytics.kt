@@ -94,4 +94,7 @@ class Analytics @Inject constructor(val context: Context) {
         inMemoryMapBreadcrumbCollector[event.eventId] = bundle
     }
 
+    fun requestOutOpt(enable: Boolean) {
+        fba.setAnalyticsCollectionEnabled(enable)
+    }
 }

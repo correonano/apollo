@@ -9,7 +9,7 @@ import io.muun.apollo.presentation.ui.base.di.ViewComponent;
 import dagger.Component;
 
 @PerApplication
-@Component(dependencies = DataComponent.class)
+@Component(dependencies = DataComponent.class, modules = ViewModelModule.class)
 public interface ApplicationComponent {
 
     void inject(ApolloApplication application);

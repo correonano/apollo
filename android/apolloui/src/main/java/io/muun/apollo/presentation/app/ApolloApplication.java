@@ -18,6 +18,7 @@ import io.muun.apollo.domain.NightModeManager;
 import io.muun.apollo.domain.libwallet.LibwalletBridge;
 import io.muun.apollo.domain.model.NightMode;
 import io.muun.apollo.domain.selector.BitcoinUnitSelector;
+import io.muun.apollo.domain.selector.UserPreferencesSelector;
 import io.muun.apollo.presentation.analytics.Analytics;
 import io.muun.apollo.presentation.app.di.ApplicationComponent;
 import io.muun.apollo.presentation.app.di.DaggerApplicationComponent;
@@ -76,6 +77,9 @@ public abstract class ApolloApplication extends Application
     @Inject
     FirebaseInstalationIdRepository firebaseInstalationIdRepository;
 
+    @Inject
+    UserPreferencesSelector userPreferencesSelector;
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -90,13 +94,14 @@ public abstract class ApolloApplication extends Application
 
         AndroidThreeTen.init(this);
 
-        // Ignore tracking events for Firebase Test Lab devices
-        if (isFirebaseTestLabDevice()) {
-            FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(false);
-        }
-
         initializeStaticSingletons();
         initializeDagger();
+
+        // Ignore tracking events for Firebase Test Lab devices
+        // ignore avoid analytics user selection || !userPreferencesSelector.get().getAnalyticsEnable()
+        if (isFirebaseTestLabDevice() || !userPreferencesSelector.get().getAnalyticsEnable()) {
+            FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(false);
+        }
 
         setNightMode();
 

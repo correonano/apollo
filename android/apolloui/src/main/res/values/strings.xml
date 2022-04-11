@@ -1538,4 +1538,12 @@
     <string name="notification_tr_activated_desc">
         The Bitcoin Network activated Taproot. You can now enjoy cheaper payments.
     </string>
+
+    <!-- challenge strings -->
+    <string name="other_settings_title">Other Settings</string>
+    <string name="analytics_settings_title">Analytics Settings</string>
+    <string name="analytics_settings_title_vm">Analytics Settings View Model</string>
+    <string name="analytics_settings_title_turn_off">Turn off Analytics Settings</string>
+    <string name="analytics_settings_exp_text">Turning off Analytics Settings your activity is not going to send information about your activity</string>
+
 </resources>

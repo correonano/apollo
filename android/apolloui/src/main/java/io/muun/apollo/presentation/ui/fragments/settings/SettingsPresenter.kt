@@ -18,12 +18,11 @@ import io.muun.apollo.domain.selector.BitcoinUnitSelector
 import io.muun.apollo.domain.selector.ExchangeRateSelector
 import io.muun.apollo.domain.selector.FeatureStatusSelector
 import io.muun.apollo.presentation.analytics.AnalyticsEvent
-import io.muun.apollo.presentation.analytics.AnalyticsEvent.E_LOG_OUT
-import io.muun.apollo.presentation.analytics.AnalyticsEvent.E_WALLET_DELETED
-import io.muun.apollo.presentation.analytics.AnalyticsEvent.S_SETTINGS
+import io.muun.apollo.presentation.analytics.AnalyticsEvent.*
 import io.muun.apollo.presentation.ui.base.ParentPresenter
 import io.muun.apollo.presentation.ui.base.SingleFragmentPresenter
 import io.muun.apollo.presentation.ui.base.di.PerFragment
+import io.muun.apollo.presentation.ui.fragments.analytics.AnalyticsSettingsFragment
 import io.muun.apollo.presentation.ui.settings.bitcoin.BitcoinSettingsFragment
 import io.muun.apollo.presentation.ui.settings.lightning.LightningSettingsFragment
 import io.muun.common.api.messages.EventCommunicationMessage.Event
@@ -208,6 +207,14 @@ class SettingsPresenter @Inject constructor(
 
     fun navigateToLightningSettings() {
         navigator.navigateToFragment(context, LightningSettingsFragment::class.java)
+    }
+
+    fun navigateToAnalyticsSettings() {
+        navigator.navigateToFragment(context, AnalyticsSettingsFragment::class.java)
+    }
+
+    fun navigateToAnalyticsSettingsVM() {
+        navigator.navigateToAnalyticsSettings(context)
     }
 
     fun navigateToBitcoinSettings() {

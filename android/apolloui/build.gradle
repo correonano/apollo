@@ -128,6 +128,10 @@ android {
         }
     }
 
+    buildFeatures {
+        dataBinding true
+    }
+
     flavorDimensions 'default'
 
     productFlavors {

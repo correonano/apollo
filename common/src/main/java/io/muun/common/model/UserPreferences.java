@@ -31,6 +31,8 @@ public class UserPreferences {
 
     public String defaultAddressType = "segwit";
 
+    public Boolean analyticsEnable = true;
+
     /**
      * JSON constructor.
      */
@@ -43,11 +45,13 @@ public class UserPreferences {
     public UserPreferences(final boolean receiveStrictMode,
                            final boolean seenNewHome,
                            final boolean seenLnurlFirstTime,
-                           final String defaultAddressType) {
+                           final String defaultAddressType,
+                           final boolean analyticsEnable) {
         this.receiveStrictMode = receiveStrictMode;
         this.seenNewHome = seenNewHome;
         this.seenLnurlFirstTime = seenLnurlFirstTime;
         this.defaultAddressType = defaultAddressType;
+        this.analyticsEnable = analyticsEnable;
     }
 
     /**

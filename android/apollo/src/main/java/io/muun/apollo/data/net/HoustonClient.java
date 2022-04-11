@@ -672,4 +672,8 @@ public class HoustonClient extends BaseClient<HoustonService> {
     public Completable updateUserPreferences(final UserPreferences prefs) {
         return getService().updateUserPreferences(prefs.toJson());
     }
+
+    public Completable mockUpdateUserPreferences(final UserPreferences prefs) {
+        return Completable.complete();
+    }
 }

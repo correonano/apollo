@@ -10,6 +10,7 @@ import io.muun.apollo.domain.selector.UserSelector;
 import io.muun.apollo.presentation.analytics.AnalyticsEvent;
 import io.muun.apollo.presentation.app.di.PerApplication;
 import io.muun.apollo.presentation.ui.activity.operations.OperationsActivity;
+import io.muun.apollo.presentation.ui.analytics.AnalyticsSettingsActivity;
 import io.muun.apollo.presentation.ui.base.SingleFragment;
 import io.muun.apollo.presentation.ui.base.SingleFragmentActivityImpl;
 import io.muun.apollo.presentation.ui.debug.DebugPanelActivity;
@@ -633,5 +634,9 @@ public class Navigator {
         context.startActivity(
                 SingleFragmentActivityImpl.Companion.getStartActivityIntent(context, fragment)
         );
+    }
+
+    public void navigateToAnalyticsSettings(@NotNull Context context) {
+        context.startActivity(AnalyticsSettingsActivity.Companion.getIntent(context));
     }
 }

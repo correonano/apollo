@@ -4,14 +4,16 @@ data class UserPreferences(
         val strictMode: Boolean,
         val seenNewHome: Boolean,
         val seenLnurlFirstTime: Boolean,
-        var defaultAddressType: String
+        var defaultAddressType: String,
+        var analyticsEnable: Boolean = true
 ) {
     fun toJson(): io.muun.common.model.UserPreferences {
         return io.muun.common.model.UserPreferences(
                 strictMode,
                 seenNewHome,
                 seenLnurlFirstTime,
-                defaultAddressType
+                defaultAddressType,
+                analyticsEnable
         )
     }
 
@@ -23,7 +25,8 @@ data class UserPreferences(
                     prefs.receiveStrictMode,
                     prefs.seenNewHome,
                     prefs.seenLnurlFirstTime,
-                    prefs.defaultAddressType
+                    prefs.defaultAddressType,
+                    prefs.analyticsEnable
             )
         }
     }

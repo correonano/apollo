@@ -330,6 +330,10 @@
                 android:name=".presentation.ui.lnurl.withdraw.LnUrlWithdrawActivity"
                 />
 
+        <activity
+            android:name=".presentation.ui.analytics.AnalyticsSettingsActivity"
+            />
+
 
         <!-- GcmMessageListenerService -->
 

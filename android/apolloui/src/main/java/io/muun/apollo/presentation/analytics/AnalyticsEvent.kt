@@ -63,6 +63,7 @@ sealed class AnalyticsEvent(metadataKeyValues: List<Pair<String, Any>> = listOf(
     class S_SET_UP_RECOVERY_CODE_GENERATE: AnalyticsEvent()
     class S_SET_UP_RECOVERY_CODE_VERIFY: AnalyticsEvent()
     class S_FINISH_RECOVERY_CODE_CONFIRM: AnalyticsEvent()
+    class S_SETTINGS_ANALYTICS: AnalyticsEvent()
 
     enum class FEEDBACK_TYPE {
         EMAIL_SETUP_SUCCESS,

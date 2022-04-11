@@ -162,6 +162,29 @@
         <View style="@style/settings_item_separator"/>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/other_settings_title"
+                style="@style/settings_section_header" />
+
+            <io.muun.apollo.presentation.ui.view.MuunSettingItem
+                android:id="@+id/analytics_settings"
+                muun:label="@string/analytics_settings_title"
+                style="@style/settings_item" />
+
+            <io.muun.apollo.presentation.ui.view.MuunSettingItem
+                android:id="@+id/analytics_settings_vm"
+                muun:label="@string/analytics_settings_title_vm"
+                style="@style/settings_item" />
+
+        </LinearLayout>
+
+        <View style="@style/settings_item_separator"/>
+
+        <LinearLayout
                 android:id="@+id/settings_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
